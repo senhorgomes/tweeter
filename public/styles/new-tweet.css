@@ -7,16 +7,23 @@ button {
   box-shadow: none;
   border-radius: 0px;
   padding: auto;
+  margin-top: 0.5em;
 }
-.new-tweet {
-  display: flex;
-  
-}
+
 #tweet-text {
-  
+  color: #545149;
+  border: 0;
+  box-shadow: none;
+  width: 100%;
+  margin: auto;
+  padding: auto;
+  border-bottom: 5px solid #545149;
+  font-family: 'Source Sans Pro', sans-serif;
 }
 .counter{
   font-family: 'Bungee', cursive;
   color: #545149;
+  margin-top: 0.5em;
+  float: right;
 }
 
