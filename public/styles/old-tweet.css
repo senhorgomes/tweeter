@@ -1,4 +1,4 @@
-.old-tweet {
+.tweet-container {
   color: #545149;
   width: 100%;
   margin: 1em auto;
@@ -7,7 +7,7 @@
   
 }
 /* instead of using a function and a seperate .js file, added hover functionality through .old-tweet directly*/
-.old-tweet:hover {
+.tweet-container:hover {
   box-shadow: 10px 10px gainsboro;
 }
 .old-tweet-userinfo {
@@ -25,8 +25,7 @@
   color: rgb(189, 189, 189);
 }
 .old-tweet-userinfo img {
-  width: 100px;
-  height: 100px;
+  width: 75px;
 }
 .dateSinceTweet {
   margin-left: 1em;
