@@ -26,6 +26,7 @@
 }
 .old-tweet-userinfo img {
   width: 75px;
+  margin-right: 0.5em;
 }
 .dateSinceTweet {
   margin-left: 1em;
