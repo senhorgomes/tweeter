@@ -25,6 +25,13 @@ const createTweetElement = (data) => {
 
 return article
 }
+
+const renderTweets = (tweets) => {
+  for (let tweet of tweets) {
+    let $tweet = createTweetElement(tweet);
+    $('.tweets-container').append($tweet);
+  }
+}
 const tweetData = {
   "user": {
     "name": "Newton",
@@ -41,4 +48,4 @@ const $tweet = createTweetElement(tweetData);
 
 // Test / driver code (temporary)
 console.log($tweet); // to see what it looks like
-$('#tweets-container').append($tweet);
+$('.tweets-container').append($tweet);
