@@ -1,14 +1,10 @@
 $(document).ready(function() {
-  // --- our code goes here ---
-  const textArea = $('#tweet-text');
+  const tweetArea = $('.old-tweet');
   //Using keyUp as key up is before the computer runs the calculation
-  textArea.on('keyup', function() {
+  tweetArea.on('mouseover', function() {
     //There is a more direct approach, $('.counter') directly. But its bad practice
     //Will go up to its siblings, and grab the value of the child counter. it will then change it according to the length of characters in the text box.
-    textArea.siblings('div').children('.counter').val(140 - (this.value.length))
-    if ((this.value.length) > 140) {
-      textArea.siblings('div').children('.counter').css('color', '#ff0000');
-    }
+    tweetArea.css('box-shadow', '5px 10px');
   });
 
 });

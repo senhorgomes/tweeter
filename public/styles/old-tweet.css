@@ -4,6 +4,7 @@
   margin: 1em auto;
   border: 5px solid #545149;
   font-family: 'Source Sans Pro', sans-serif;
+  box-shadow: 0;
 }
 .old-tweet-userinfo {
   margin: 0.5em;
@@ -14,6 +15,8 @@
 }
 .Username{
   color: rgb(189, 189, 189);
+  flex-direction: row;
+  justify-content: flex-start;
 }
 .old-tweet-userinfo img {
   width: 100px;
