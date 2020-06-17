@@ -6,6 +6,7 @@
   font-family: 'Source Sans Pro', sans-serif;
   
 }
+/* instead of using a function and a seperate .js file, added hover functionality through .old-tweet directly*/
 .old-tweet:hover {
   box-shadow: 10px 10px gainsboro;
 }
@@ -30,10 +31,8 @@
 .dateSinceTweet {
   margin-left: 1em;
 }
-
 .tweet {
   margin: 0.5em;
   padding: 1.5em 1em;
-
   border-bottom: 5px solid #545149;
 }
