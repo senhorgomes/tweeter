@@ -3,7 +3,7 @@
  * jQuery is already loaded
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
  */
-$(document).ready(function () {
+$(document).ready(function() {
   //Function has a prerendered html format. It grabs the info from the data of tweet, and places the values of the keys into the assigned locations. For the img, since the key value is a string, and as long as it is a string, the source will still work
   const createTweetElement = (data) => {
     const article = `<article class="tweet-container">
@@ -23,8 +23,8 @@ $(document).ready(function () {
       </p>
       </footer>
       </article>`;
-    return article
-  }
+    return article;
+  };
   //Render tweet function uses a helper function to produce the tweet in the proper format, and push them into the html. The classes are predone so CSS can do its job properly"
   const renderTweets = (tweets) => {
     for (let tweet of tweets) {
@@ -32,7 +32,7 @@ $(document).ready(function () {
       //Had an issue where the css style was applied to the article, but it actually needs to be applied to the old tweet section class
       $('.old-tweet').prepend($tweet);
     }
-  }
+  };
 
   const data = [
     {
@@ -58,6 +58,6 @@ $(document).ready(function () {
       },
       "created_at": 1461113959088
     }
-  ]
+  ];
   renderTweets(data);
 });
