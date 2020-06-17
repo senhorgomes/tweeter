@@ -1,5 +1,7 @@
 .aligner {
+  /* Added padding on top to counter the sticky nav. That way it doesnt cover the top portion of the website */
   display: flex;
+  margin-top: 72px;;
   height: 400px;
   background-color: #e37d00;
   background-image: url("https://www.transparenttextures.com/patterns/asfalt-light.png");
