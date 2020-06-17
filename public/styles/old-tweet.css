@@ -7,7 +7,7 @@
   
 }
 .old-tweet:hover {
-  box-shadow: 5px 10px;
+  box-shadow: 10px 10px gainsboro;
 }
 .old-tweet-userinfo {
   margin: 0.5em 1em;
