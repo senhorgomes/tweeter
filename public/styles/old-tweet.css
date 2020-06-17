@@ -4,28 +4,37 @@
   margin: 1em auto;
   border: 5px solid #545149;
   font-family: 'Source Sans Pro', sans-serif;
-  box-shadow: 0;
+  
+}
+.old-tweet:hover {
+  box-shadow: 5px 10px;
 }
 .old-tweet-userinfo {
-  margin: 0.5em;
+  margin: 0.5em 1em;
   display: flex;
   flex-direction: row;
   align-items: center;
-  align-content: space-between;
+  justify-content: space-between;
+  font-weight: 600;
+}
+.old-tweet-userinfo > div {
+  display: flex;
+  align-items: center;
 }
 .Username{
   color: rgb(189, 189, 189);
-  flex-direction: row;
-  justify-content: flex-start;
 }
 .old-tweet-userinfo img {
   width: 100px;
   height: 100px;
 }
+.dateSinceTweet {
+  margin-left: 1em;
+}
 
 .tweet {
-  margin: 1em;
-  padding: 1em;
+  margin: 0.5em;
+  padding: 1.5em 1em;
 
   border-bottom: 5px solid #545149;
 }
