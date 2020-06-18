@@ -59,7 +59,7 @@ const data = [
 ];
 
 const loadTweets = () => {
-
+  $.ajax('/tweets', { method: 'POST', dataType: 'JSON' , success: renderTweets })
 };
 
 $(document).ready(function () {
