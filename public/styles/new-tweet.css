@@ -19,6 +19,7 @@ button {
   padding: auto;
   border-bottom: 5px solid #545149;
   font-family: 'Source Sans Pro', sans-serif;
+  resize: none;
 }
 .counter {
   font-family: 'Bungee', cursive;
