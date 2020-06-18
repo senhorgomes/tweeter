@@ -3,6 +3,12 @@
  * jQuery is already loaded
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
  */
+//Escape from Cross site scripting.
+const escape = function(str) {
+  let div = document.createElement('div');
+  div.appendChild(document.createTextNode(str));
+  return div.innerHTML;
+};
 //Function has a prerendered html format. It grabs the info from the data of tweet, and places the values of the keys into the assigned locations. For the img, since the key value is a string, and as long as it is a string, the source will still work
 const createTweetElement = (data) => {
   const article = `<article class="tweet-container">
@@ -14,7 +20,7 @@ const createTweetElement = (data) => {
       <p class="Username">${data.user.handle}</p>
     </header>
     <p class="tweet">
-      ${data.content.text}
+      ${escape(data.content.text)}
     </p>
     <footer>
       <p class="dateSinceTweet">
@@ -24,6 +30,7 @@ const createTweetElement = (data) => {
   </article>`;
   return article;
 };
+
 //Render tweet function uses a helper function to produce the tweet in the proper format, and push them into the html. The classes are predone so CSS can do its job properly"
 const renderTweets = (tweets) => {
   for (let tweet of tweets) {
@@ -32,12 +39,11 @@ const renderTweets = (tweets) => {
     $('.old-tweet').prepend($tweet);
   }
 };
-
 const loadTweets = () => {
   //This will retrieve the tweets in the database, and render them with a helper function
   $.ajax('/tweets', { method: 'GET', dataType: 'JSON', success: renderTweets })
 };
-
+//Prepares page, and renders all tweets on page
 $(document).ready(function () {
   loadTweets();
   $('form').on('submit', (evt) => {
