@@ -4,7 +4,6 @@
   margin: 1em auto;
   border: 5px solid #545149;
   font-family: 'Source Sans Pro', sans-serif;
-  
 }
 /* instead of using a function and a seperate .js file, added hover functionality through .old-tweet directly*/
 .tweet-container:hover {
