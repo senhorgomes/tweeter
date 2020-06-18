@@ -43,6 +43,6 @@ $(document).ready(function () {
     evt.preventDefault();
     //Action and method have to match the form that we are grabbing the information from
     //Serialize will turn the form data into a query string
-    $.ajax("/tweets", { method: 'POST' , data: $(this).serialize()})
+    $.ajax("/tweets", { method: 'POST' , data: $('form').serialize()})
   })
 });
