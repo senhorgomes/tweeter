@@ -40,9 +40,17 @@ const loadTweets = () => {
 $(document).ready(function () {
   loadTweets();
   $('form').on('submit', (evt) => {
-    evt.preventDefault();
+  evt.preventDefault();
+  let tweetText = $('#tweet-text').val();
+  if (tweetText === "" || null) {
+    alert("You forgot to write your Tweet!")
+  } else if (tweetText.length > 140) {
+    alert("Your Tweet is too long!")
+  } else {
     //Action and method have to match the form that we are grabbing the information from
     //Serialize will turn the form data into a query string
     $.ajax("/tweets", { method: 'POST' , data: $('form').serialize()})
+    window.location.href = "/"
+    }
   })
 });
