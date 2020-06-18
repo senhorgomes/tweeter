@@ -52,7 +52,7 @@ $(document).ready(function () {
   let tweetText = $('#tweet-text').val();
   //Conditional check to verify if Tweet is empty or over the character limit
   if (tweetText === "" || null) {
-    alert("You forgot to write your Tweet!")
+    $('.alert-message').append('<span>You forgot to write your Tweet!</span>').slideDown('Normal')
   } else if (tweetText.length > 140) {
     alert("Your Tweet is too long!")
   } else {
