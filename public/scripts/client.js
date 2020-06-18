@@ -34,14 +34,17 @@ const renderTweets = (tweets) => {
 };
 
 const loadTweets = () => {
+  //This will retrieve the tweets in the database, and render them with a helper function
   $.ajax('/tweets', { method: 'GET', dataType: 'JSON', success: renderTweets })
 };
 
 $(document).ready(function () {
   loadTweets();
   $('form').on('submit', (evt) => {
+  //Prevents page refresh
   evt.preventDefault();
   let tweetText = $('#tweet-text').val();
+  //Conditional check to verify if Tweet is empty or over the character limit
   if (tweetText === "" || null) {
     alert("You forgot to write your Tweet!")
   } else if (tweetText.length > 140) {
@@ -50,8 +53,10 @@ $(document).ready(function () {
     //Action and method have to match the form that we are grabbing the information from
     //Serialize will turn the form data into a query string
     $.ajax("/tweets", { method: 'POST' , data: $('form').serialize()})
+    //Reload tweets, instead of reloading page
     loadTweets();
-    document.getElementsByName('form').reset()
+    //Reset form
+    $('#tweet-text').val("")
     }
   })
 });
