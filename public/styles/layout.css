@@ -38,7 +38,7 @@ main {
     margin-top: 72px;
   }
 }
- @media only screen and (min-width: 1024px) {
+@media only screen and (min-width: 1024px) {
   .user-profile {
     border-radius: 50%;
     width: 30%;
@@ -53,4 +53,4 @@ main {
     margin: 2em;
     padding-top: 1em;
   }
- }
+}
