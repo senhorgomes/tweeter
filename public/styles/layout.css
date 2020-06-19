@@ -29,9 +29,8 @@ main {
  * Additional CSS can be defined below or in other CSS files, as per instructions
  */
  @media only screen and (min-width: 768px) {
-  .feature {
-    width: 33.3%;
-    line-height: 600px;
+  .user-profile {
+    margin-top: 72px;
   }
 
   .content {
@@ -45,10 +44,10 @@ main {
 }
  @media only screen and (min-width: 1024px) {
   .user-profile {
+    border-radius: 50%;
     width: 30%;
     float: left;
-    margin: 4em 1em;
-    border-top: 2em;
+    margin: 150px 24px 24px 100px;
   }
 
   .container {
