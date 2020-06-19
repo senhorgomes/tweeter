@@ -46,15 +46,20 @@ const loadTweets = () => {
 //Prepares page, and renders all tweets on page
 $(document).ready(function () {
   loadTweets();
+  $('.alert-message').hide().removeClass("hidden")
   $('form').on('submit', (evt) => {
   //Prevents page refresh
   evt.preventDefault();
   let tweetText = $('#tweet-text').val();
   //Conditional check to verify if Tweet is empty or over the character limit
   if (tweetText === "" || null) {
-    $('.alert-message').text('&#128683 Whoops..You forgot to write your Tweet! &#128683').slideDown('slow')
+    if ($('.alert-message').is(":hidden")) {
+      $('.alert-message').text('Whoops..You forgot to write your Tweet!').slideDown('slow')
+    }
   } else if (tweetText.length > 140) {
-    alert("Your Tweet is too long!")
+    if ($('.alert-message').is(":hidden")) {
+      $('.alert-message').text('Whoops..Your Tweet is too long!').slideDown('slow')
+    }
   } else {
     //Action and method have to match the form that we are grabbing the information from
     //Serialize will turn the form data into a query string
