@@ -4,11 +4,11 @@ Tweeter is a simple, single-page Twitter clone made by yours truly, Bryan Gomes.
 
 ## Screenshots
 
-!["Screenshot of Desktop view"] (https://github.com/senhorgomes/tweeter/blob/master/docs/TweeterDesktopView.png)
+!["Screenshot of Desktop view"](https://github.com/senhorgomes/tweeter/blob/master/docs/TweeterDesktopView.png)
 
-!["Screenshot of Tablet view"] (https://github.com/senhorgomes/tweeter/blob/master/docs/TweeterTabletView.png)
+!["Screenshot of Tablet view"](https://github.com/senhorgomes/tweeter/blob/master/docs/TweeterTabletView.png)
 
-!["Screenshot of Error Message"] (https://github.com/senhorgomes/tweeter/blob/master/docs/TweeterErrorUhOh.png)
+!["Screenshot of Error Message"](https://github.com/senhorgomes/tweeter/blob/master/docs/TweeterErrorUhOh.png)
 ## Getting Started
 
 1. Fork this repository, then clone your fork of this repository.
