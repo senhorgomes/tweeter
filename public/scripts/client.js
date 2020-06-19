@@ -47,9 +47,9 @@ const loadTweets = () => {
 
 //To keep things DRY- timedSlideUp helps to hide the alert message after a certain time has reached
 //Delay is just long enough so that the user can read it, and allows another alert to pop up if necessary
-const timedSlideUp = (
+const timedSlideUp = () => {
   $('.alert-message').delay(3500).slideUp('fast')
-)
+};
 
 //Prepares page, and renders all tweets on page
 $(document).ready(function () {
