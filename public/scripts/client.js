@@ -39,15 +39,18 @@ const renderTweets = (tweets) => {
     $('.old-tweet').prepend($tweet);
   }
 };
+
 const loadTweets = () => {
   //This will retrieve the tweets in the database, and render them with a helper function
   $.ajax('/tweets', { method: 'GET', dataType: 'JSON', success: renderTweets })
 };
-//Helper function that hides the alert message after a certain time has reached
+
+//To keep things DRY- timedSlideUp helps to hide the alert message after a certain time has reached
 //Delay is just long enough so that the user can read it, and allows another alert to pop up if necessary
-const timedSlideUp = () => {
+const timedSlideUp = (
   $('.alert-message').delay(3500).slideUp('fast')
-}
+)
+
 //Prepares page, and renders all tweets on page
 $(document).ready(function () {
   loadTweets();
