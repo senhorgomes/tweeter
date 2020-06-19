@@ -10,21 +10,21 @@ const escape = function(str) {
   return div.innerHTML;
 };
 //Function has a prerendered html format. It grabs the info from the data of tweet, and places the values of the keys into the assigned locations. For the img, since the key value is a string, and as long as it is a string, the source will still work
-const createTweetElement = (data) => {
+const createTweetElement = (tweetData) => {
   const article = `<article class="tweet-container">
     <header class="old-tweet-userinfo">
       <div>
-        <img src=${data.user.avatars}>
-        <p>${data.user.name}</p>
+        <img src=${tweetData.user.avatars}>
+        <p>${tweetData.user.name}</p>
       </div>
-      <p class="Username">${data.user.handle}</p>
+      <p class="Username">${tweetData.user.handle}</p>
     </header>
     <p class="tweet">
-      ${escape(data.content.text)}
+      ${escape(tweetData.content.text)}
     </p>
     <footer>
       <p class="dateSinceTweet">
-        ${data.created_at}
+      ${moment(tweetData.created_at, "").fromNow()}
       </p>
     </footer>
   </article>`;
