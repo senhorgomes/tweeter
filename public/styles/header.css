@@ -1,5 +1,7 @@
 .user-profile {
+
   /* Added padding on top to counter the sticky nav. That way it doesnt cover the top portion of the website */
+  
   display: flex;
   flex-direction: column;
   align-items: center;

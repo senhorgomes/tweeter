@@ -3,6 +3,7 @@
   <head>
     <!-- Meta Information -->
     <title>Tweeter - Home Page</title>
+    
     <!-- Google Fonts(Bungee, Source Sans Pro 300, 300 italics, 700, and 700 italics-->
     <link href="https://fonts.googleapis.com/css2?family=Bungee&family=Source+Sans+Pro:ital,wght@0,300;0,700;1,300;1,700&display=swap" rel="stylesheet">
 
@@ -18,12 +19,16 @@
 
     <!-- External JS -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    
     <!-- Time since tweet date -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.26.0/moment.min.js"></script>
+    
     <!-- App JS -->
     <script type="text/javascript" src="/scripts/client.js"></script>
+    
     <!-- Character Counter -->
     <script type="text/javascript" src="/scripts/composer-char-counter.js"></script>
+    
     <!-- Disabling Viewpoint Zooming -->
     <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0' />
   </head>
@@ -50,7 +55,6 @@
         </div>
         <h2>Compose Tweet</h2>
         <form action="/tweets" method="POST">
-          <!-- <label for="tweet-text">What are you humming about?</label> -->
           <textarea name="text" id="tweet-text" placeholder="What are you humming about?"></textarea>
           <div>
             <button type="submit">Tweet</button>

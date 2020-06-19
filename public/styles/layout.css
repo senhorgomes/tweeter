@@ -30,17 +30,19 @@ main {
  */
 
 
-/* All Media Queries relating to the layout of the html will be here */
+/* All Media Queries relating to the layout of the html will be here. Made a permanent media query to allow screens of all sizes to have a top margin. I wanted to combine them but we need two, one with a min of 768 and the other for 1025px */
 @media only screen {
   .user-profile {
     margin-top: 72px;
   }
 }
+
  @media only screen and (min-width: 768px) {
   .user-profile {
     margin-top: 72px;
   }
 }
+
 @media only screen and (min-width: 1024px) {
   .user-profile {
     border-radius: 50%;

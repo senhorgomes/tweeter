@@ -1,5 +1,6 @@
 nav {
   display: flex;
+  /* height was not needed, but it looks neat with the bottom cropped */
   height: 50px;
   background-color: #4056A1;
   padding: 1.5em;
