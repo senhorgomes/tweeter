@@ -28,6 +28,9 @@ main {
 /*
  * Additional CSS can be defined below or in other CSS files, as per instructions
  */
+
+
+/* All Media Queries relating to the layout of the html will be here */
 @media only screen {
   .user-profile {
     margin-top: 72px;

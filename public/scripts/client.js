@@ -42,42 +42,41 @@ const renderTweets = (tweets) => {
 
 const loadTweets = () => {
   //This will retrieve the tweets in the database, and render them with a helper function
-  $.ajax('/tweets', { method: 'GET', dataType: 'JSON', success: renderTweets })
+  $.ajax('/tweets', { method: 'GET', dataType: 'JSON', success: renderTweets });
 };
 
 //To keep things DRY- timedSlideUp helps to hide the alert message after a certain time has reached
 //Delay is just long enough so that the user can read it, and allows another alert to pop up if necessary
 const timedSlideUp = () => {
-  $('.alert-message').delay(3500).slideUp('fast')
+  $('.alert-message').delay(3500).slideUp('fast');
 };
-
 //Prepares page, and renders all tweets on page
-$(document).ready(function () {
+$(document).ready(function() {
   loadTweets();
-  $('.alert-message').hide().removeClass("hidden")
+  $('.alert-message').hide().removeClass("hidden");
   $('form').on('submit', (evt) => {
-  //Prevents page refresh
-  evt.preventDefault();
-  let tweetText = $('#tweet-text').val();
-  //Conditional check to verify if Tweet is empty or over the character limit, if either conditions are true, an error message slides down
-  if (tweetText === "" || null) {
-    if ($('.alert-message').is(":hidden")) {
-      $('.alert-message').text('Whoops... You forgot to write your Tweet!').slideDown('slow', timedSlideUp)
+    //Prevents page refresh
+    evt.preventDefault();
+    let tweetText = $('#tweet-text').val();
+    //Conditional check to verify if Tweet is empty or over the character limit, if either conditions are true, an error message slides down
+    if (tweetText === "" || null) {
+      if ($('.alert-message').is(":hidden")) {
+        $('.alert-message').text('Whoops... You forgot to write your Tweet!').slideDown('slow', timedSlideUp);
+      }
+    } else if (tweetText.length > 140) {
+      if ($('.alert-message').is(":hidden")) {
+        $('.alert-message').text('Whoops... Your Tweet is too long!').slideDown('slow', timedSlideUp);
+      }
+    } else {
+      //Action and method have to match the form that we are grabbing the information from
+      //Serialize will turn the form data into a query string
+      $.ajax("/tweets", { method: 'POST', data: $('form').serialize() });
+      //Reload tweets, instead of reloading page
+      loadTweets();
+      //Reset form
+      $('#tweet-text').val("");
+      //Hides alert message again
+      $('.alert-message').hide().removeClass("hidden");
     }
-  } else if (tweetText.length > 140) {
-    if ($('.alert-message').is(":hidden")) {
-      $('.alert-message').text('Whoops... Your Tweet is too long!').slideDown('slow', timedSlideUp)
-    }
-  } else {
-    //Action and method have to match the form that we are grabbing the information from
-    //Serialize will turn the form data into a query string
-    $.ajax("/tweets", { method: 'POST' , data: $('form').serialize()})
-    //Reload tweets, instead of reloading page
-    loadTweets();
-    //Reset form
-    $('#tweet-text').val("")
-    //Hides alert message again
-    $('.alert-message').hide().removeClass("hidden")
-    }
-  })
+  });
 });
