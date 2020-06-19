@@ -1,6 +1,9 @@
-.aligner {
+.user-profile {
   /* Added padding on top to counter the sticky nav. That way it doesnt cover the top portion of the website */
   display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   margin-top: 72px;;
   height: 400px;
   background-color: #e37d00;
@@ -8,9 +11,3 @@
   /* This is mostly intended for prototyping; please download the pattern and re-host for production environments. Thank you! */
 }
 
-.aligner {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-}

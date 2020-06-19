@@ -29,6 +29,32 @@ main {
  * Additional CSS can be defined below or in other CSS files, as per instructions
  */
  @media only screen and (min-width: 768px) {
- }
+  .feature {
+    width: 33.3%;
+    line-height: 600px;
+  }
+
+  .content {
+    width: 66.7%;
+    float: right
+  }
+
+  .footer {
+    clear: right;
+  }
+}
  @media only screen and (min-width: 1024px) {
+  .user-profile {
+    width: 30%;
+    float: left;
+    margin: 4em 1em;
+    border-top: 2em;
+  }
+
+  .container {
+    width: 50%;
+    float: right;
+    margin: 2em;
+    padding-top: 1em;
+  }
  }
