@@ -1,5 +1,5 @@
-//Escape from Cross site scripting.
 
+//Escape from Cross site scripting.
 const escape = function(str) {
   let div = document.createElement('div');
   div.appendChild(document.createTextNode(str));
@@ -73,8 +73,8 @@ $(document).ready(function() {
 
       $.ajax("/tweets", { method: 'POST', data: $('form')
       .serialize() })
-      .then(() => {$('.old-tweet')
-      .empty(), loadTweets(); 
+      .then(() => {$('.old-tweet').empty(), 
+      loadTweets(); 
       $('.counter').text("140");
       $('#tweet-text').val("");
       });
