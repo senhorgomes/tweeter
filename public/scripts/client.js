@@ -59,7 +59,6 @@ const timedSlideUp = () => {
 //Prepares page, and renders all tweets on page
 
 $(document).ready(function() {
-  loadTweets();
   $('.alert-message').hide().removeClass("hidden");
   $('form').on('submit', (evt) => {
 
@@ -82,20 +81,15 @@ $(document).ready(function() {
 
       //Action and method have to match the form that we are grabbing the information from
       //Serialize will turn the form data into a query string
-      
-      $.ajax("/tweets", { method: 'POST', data: $('form').serialize() });
-      
-      //Reload tweets, instead of reloading page
-      
-      loadTweets();
-      
-      //Reset form
-      
+      //Empties tweets, and resets counter, before loading them again
+      $.ajax("/tweets", { method: 'POST', data: $('form')
+      .serialize() })
+      .then(() => {$('.old-tweet')
+      .empty(), loadTweets(); 
+      $('.counter').text("140");
       $('#tweet-text').val("");
-      
-      //Hides alert message again
-      
-      $('.alert-message').hide().removeClass("hidden");
+      });
     }
   });
+  loadTweets();
 });
